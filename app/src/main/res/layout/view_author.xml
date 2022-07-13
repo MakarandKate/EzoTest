@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.graphics.Color"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="data"
+            type="in.co.ezotest.data.model.Author" />
+        <variable
+            name="adapter"
+            type="in.co.ezotest.view.adapter.AuthorAdapter" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardBackgroundColor="@color/white"
+        app:rippleColor="#F0F0F0"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp" app:cardMaxElevation="4dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp" android:layout_marginBottom="4dp"
+        style="@style/Widget.MaterialComponents.CardView">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingStart="12dp" android:paddingEnd="12dp"
+            android:paddingTop="8dp" android:paddingBottom="8dp">
+
+            <!-- CREATE 'BindingAdapter' FOR LOADING IMAGE FROM 'data' USING 'Glide' TO SHOW IMAGE -->
+            <!-- SHOW DEFAULT IMAGE 'image_ezo.png' IN CASE IMAGE URL IS NOT AVAILABLE -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAuthorImage"
+                android:layout_width="64dp" android:layout_height="64dp" />
+
+            <!-- ADD 'AuthorName' FROM 'data' HERE -->
+            <TextView
+                android:id="@+id/tvAuthorName"
+                android:textColor="#000000" android:textSize="20sp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingStart="8dp" android:paddingEnd="8dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
